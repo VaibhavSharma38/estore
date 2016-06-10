@@ -1,0 +1,53 @@
+<div id="{$_name}" style="{$style}" class="{$class}">{rows}{row}
+    <div class="col-md-3 " data-xsnb-item-id='{$id}' onclick='javascript:void(0);'>
+        <div class="product-holder">
+            <div class="product-item-2">
+                <div class="product-thumb">
+                    <img src="{$first_image}" alt="Product Title">
+                </div> <!-- /.product-thumb -->
+                <div class="product-content overlay">
+                    {name_wrapper}
+                    <h5><a href="{item_detail_page_url_via_name}{/}">{$name}</a></h5>
+                    {/}
+                    {sale_price_wrapper}
+                    <span class="price">{$sale_price}</span>
+                    {/}
+                    {original_price_wrapper}
+                    <span class="price">{$purchase_price}</span>
+                    {/}
+                    {description_wrapper}
+                    <p>{$description}</p>
+                    {/}
+                    {specification_wrapper}
+                        {specification}
+                        {rows}{row}
+                        <div class="col-md-6">
+                            {$name}
+                        </div>
+                        <div class ="col-md-6">    
+                            {$value}
+                        </div>        
+                        {/}{/}
+                        {/specification}
+                    {/}
+                    {personalizedbtn_wrapper}
+                    <div data-xsnbitemid="{$id}" class="commerce-personalize-button-wrapper">
+                    {$personalizedbtn}
+                    </div>
+                    {/}
+                    {addtocart_wrapper}
+                    <div class ="xepan-commerce-item-addtocart" data-xsnbitemid="{$id}" data-name="{$name}">
+                    {$Addtocart}
+                    </div>
+                    {/}
+                </div> <!-- /.product-content -->
+            </div> <!-- /.product-item-2 -->
+            <div class="clearfix"></div>
+        </div> <!-- /.product-holder -->
+    </div> <!-- /.col-md-5 -->
+    {/}{/}
+    {not_found}
+    <div role="alert" class="full-width alert alert-warning"><strong class="glyphicon glyphicon-warning-sign">&nbsp;Warning!<span>&nbsp;{$not_found_message}</span></strong></div>{/}
+    {paginator_wrapper}
+    <div style="float:none; clear:both" class="xshop-item-paginator">{$Paginator}</div>{/}
+</div><!-- /.row -->
